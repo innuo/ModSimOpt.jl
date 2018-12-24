@@ -49,7 +49,10 @@ end
 
 
 function inconsistent_gaussian_gibbs()
-    px_y = GaussianConditional(0, 1, 1)
-    py_x = GaussianConditional(0, 1, 1)
-    return gibbs_sampler(px_y, py_x)
+    px_y = GaussianConditional(0, 1.5, 2)
+    py_x = GaussianConditional(0, 0.5, 1)
+    x,y = gibbs_sampler(px_y, py_x)
+    p = plot(x, y, seriestype=:scatter, xlabel="X", ylabel="Y", legend=false)
+    display(p)
+    return x,y
 end

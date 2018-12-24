@@ -1,5 +1,6 @@
 module ModSimOpt
         using Distributions
+        using Plots
 
         export
         ConditionalDistribution,
